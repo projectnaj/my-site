@@ -1,1068 +1,441 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدمات تنظيف واجهات متميزة | مؤسسة صدى الالوان للمقاولات</title>
-    <meta name="description" content="احصل على خدمات تنظيف واجهات الزجاج المتميزة مع افضل شركة تنظيف واجهات زجاج. تقنيات حديثة، دقة عالية، ونتائج استثنائية تجعل واجهاتك لامعة دائمًا.">
-    
-    <!-- ربط خطوط Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- ربط Font Awesome للايقونات -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* أساسيات التصميم */
-        :root {
-            --primary-color: #0088ff;
-            --secondary-color: #2f88d6;
-            --dark-color: #2c2f34;
-            --light-color: #f8f9fa;
-            --success-color: #2ecc71;
-            --warning-color: #e67e22;
-            --text-color: #333;
-            --text-light: #777;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Tajawal', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: #fff;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .section {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-        
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 136, 255, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        /* الشريط العلوي */
-        .top-bar {
-            background: var(--dark-color);
-            color: white;
-            padding: 8px 0;
-            font-size: 0.9rem;
-        }
-        
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .top-contact {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .top-contact a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .top-contact a:hover {
-            color: var(--primary-color);
-        }
-        
-        .top-social {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .top-social a {
-            font-size: 1.1rem;
-        }
-        
-        .top-social a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* الهيدر والتنقل */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 50px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 25px;
-        }
-        
-        .nav-menu li a {
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
-        
-        .nav-menu li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        .nav-menu li a:hover::after,
-        .nav-menu li a.active::after {
-            width: 100%;
-        }
-        
-        .nav-menu li a.active,
-        .nav-menu li a:hover {
-            color: var(--primary-color);
-        }
-        
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* الهيرو سيكشن */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1628744404730-5e143358539b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 0;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-        
-        /* قسم الخدمات */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-        
-        .service-content {
-            padding: 20px;
-        }
-        
-        .service-content h3 {
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-        
-        .service-content p {
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-        
-        /* قسم لماذا نحن */
-        .why-us {
-            background: var(--light-color);
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature {
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .feature h3 {
-            margin-bottom: 10px;
-        }
-        
-        /* أعمالنا */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .project-item {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        
-        .project-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 136, 255, 0.8);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .project-item:hover .project-overlay {
-            opacity: 1;
-        }
-        
-        .project-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .project-overlay h3 {
-            color: white;
-            margin-bottom: 10px;
-        }
-        
-        /* اتصل بنا */
-        .contact {
-            background: var(--light-color);
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 136, 255, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        /* الشريط العلوي */
-        .top-bar {
-            background: var(--dark-color);
-            color: white;
-            padding: 8px 0;
-            font-size: 0.9rem;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>خدمات تنظيف واجهات متميزة | مؤسسة صدى الألوان للمقاولات</title>
+  <meta name="description" content="خدمات احترافية لتنظيف الواجهات الزجاجية والمباني بجودة عالية وتقنيات حديثة في المملكة العربية السعودية." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  <!-- مشاركة اجتماعية -->
+  <meta property="og:title" content="مؤسسة صدى الألوان للمقاولات" />
+  <meta property="og:description" content="تنظيف واجهات زجاجية وصيانة بأعلى معايير الجودة." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://projectnaj.github.io/my-site/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1628744404730-5e143358539b?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image">
 
-        .top-contact {
-            display: flex;
-            gap: 20px;
-        }
+  <!-- Structured Data بسيط -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "مؤسسة صدى الألوان للمقاولات",
+    "image": "https://images.unsplash.com/photo-1628744404730-5e143358539b?auto=format&fit=crop&w=1200&q=80",
+    "url": "https://projectnaj.github.io/my-site/",
+    "telephone": "+966553011504",
+    "address": {"@type":"PostalAddress","addressCountry":"SA","addressLocality":"الرياض"},
+    "areaServed": "المملكة العربية السعودية"
+  }
+  </script>
 
-        .top-contact a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+  <style>
+    :root{
+      --primary:#0088ff;
+      --primary-600:#2f88d6;
+      --dark:#2c2f34;
+      --muted:#778;
+      --bg:#fff;
+      --section:60px;
+      --radius:14px;
+      --shadow:0 10px 25px rgba(0,0,0,.08);
+      --t:all .25s ease;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:'Tajawal',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#333;background:#fff;line-height:1.7}
 
-        .top-contact a:hover {
-            color: var(--primary-color);
-        }
+    img,video{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none;transition:var(--t)}
+    .container{max-width:1200px;margin-inline:auto;padding-inline:16px}
 
-        .top-social {
-            display: flex;
-            gap: 15px;
-        }
+    /* Top bar */
+    .topbar{background:var(--dark);color:#fff;font-size:.9rem}
+    .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:8px}
+    .topbar a:hover{color:var(--primary)}
 
-        .top-social a {
-            font-size: 1.1rem;
-        }
+    /* Header */
+    header{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.06);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding-block:14px;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:48px}
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{padding-block:6px;position:relative;font-weight:500}
+    .menu a.active,.menu a:hover{color:var(--primary)}
+    .menu a.active::after,.menu a:hover::after{content:"";position:absolute;inset-inline:0;bottom:-6px;height:2px;background:var(--primary)}
+    .toggle{display:none;border:0;background:#f4f6f8;width:42px;height:42px;border-radius:10px;cursor:pointer}
+    .toggle i{font-size:18px}
 
-        .top-social a:hover {
-            color: var(--primary-color);
-        }
+    /* Mobile menu */
+    @media (max-width: 992px){
+      .menu{position:fixed;inset-block:0;inset-inline:auto 0;right:-320px;width:280px;background:#fff;box-shadow:var(--shadow);
+            flex-direction:column;align-items:stretch;padding:90px 16px 24px;gap:0;transition:var(--t);z-index:60}
+      .menu.open{right:0}
+      .menu a{padding:14px;border-bottom:1px solid #f0f0f0}
+      .toggle{display:inline-grid;place-items:center}
+    }
 
-        /* الهيدر والتنقل */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* Buttons */
+    .btn{display:inline-block;background:var(--primary);color:#fff;padding:12px 22px;border-radius:10px;font-weight:600;box-shadow:0 6px 18px rgba(0,136,255,.25)}
+    .btn:hover{background:var(--primary-600);transform:translateY(-2px)}
+    .btn.outline{background:transparent;color:var(--primary);border:2px solid var(--primary);box-shadow:none}
+    .btn.outline:hover{background:var(--primary);color:#fff}
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
+    /* Hero */
+    .hero{position:relative;background:linear-gradient(#00000070,#00000070),
+           url('https://images.unsplash.com/photo-1628744404730-5e143358539b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+          color:#fff;text-align:center}
+    .hero .inner{padding:110px 0}
+    .hero h1{font-size:clamp(26px,4vw,42px);margin:0 0 12px}
+    .hero p{font-size:clamp(14px,2.1vw,18px);opacity:.95;margin:0 0 22px}
+    .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+    /* Sections */
+    section{padding-block:var(--section)}
+    .title{text-align:center;margin:0 0 36px}
+    .title h2{font-size:clamp(22px,3vw,32px);color:var(--dark);margin:0 0 10px}
+    .title .bar{width:80px;height:3px;background:var(--primary);margin:10px auto 0;border-radius:99px}
 
-        .logo img {
-            height: 50px;
-        }
+    /* Services */
+    .grid{display:grid;gap:22px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width: 992px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width: 640px){.grid-3{grid-template-columns:1fr}}
+    .card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .card .thumb{aspect-ratio:16/9;overflow:hidden}
+    .card .thumb img{width:100%;height:100%;object-fit:cover;transition:var(--t)}
+    .card:hover .thumb img{transform:scale(1.05)}
+    .card .body{padding:16px 16px 18px}
+    .card h3{margin:0 0 8px;color:var(--dark);font-size:1.1rem}
+    .muted{color:var(--muted)}
 
-        .nav-menu {
-            display: flex;
-            gap: 25px;
-        }
+    /* Why us */
+    .muted-bg{background:#f7f9fc}
+    .feature{text-align:center;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+    .feature i{font-size:30px;color:var(--primary);margin-bottom:10px}
 
-        .nav-menu li a {
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
+    /* Projects */
+    .project{position:relative;border-radius:var(--radius);overflow:hidden}
+    .project img{width:100%;height:240px;object-fit:cover;display:block;transition:var(--t)}
+    .project .overlay{position:absolute;inset:0;background:linear-gradient(transparent, rgba(0,136,255,.85));display:flex;flex-direction:column;justify-content:flex-end;align-items:center;color:#fff;padding:18px;opacity:0;transition:var(--t)}
+    .project:hover img{transform:scale(1.05)}
+    .project:hover .overlay{opacity:1}
 
-        .nav-menu li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: var(--transition);
-        }
+    /* Contact */
+    .contact-grid{display:grid;gap:26px;grid-template-columns:1.1fr .9fr}
+    @media (max-width: 900px){.contact-grid{grid-template-columns:1fr}}
+    .info .row{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+    .info .row i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#fff;box-shadow:var(--shadow);color:var(--primary)}
+    .form{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .form .group{margin-bottom:14px}
+    .form label{display:block;margin-bottom:6px;font-weight:600}
+    .form input,.form textarea{width:100%;border:1px solid #e6e6e6;border-radius:10px;padding:12px 14px;font-family:inherit}
+    .form input:focus,.form textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px #0088ff20}
+    .form textarea{min-height:120px;resize:vertical}
 
-        .nav-menu li a:hover::after,
-        .nav-menu li a.active::after {
-            width: 100%;
-        }
+    /* Footer */
+    footer{background:var(--dark);color:#c9ced6}
+    .foot{display:grid;gap:26px;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:36px}
+    @media (max-width: 992px){.foot{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 560px){.foot{grid-template-columns:1fr}}
+    footer h3{color:#fff;margin:0 0 14px;font-size:1.05rem}
+    footer a{color:#c9ced6}
+    .foot .social a{font-size:20px;margin-inline:8px}
+    .copy{border-top:1px solid #3c4046;text-align:center;padding:16px;color:#9aa1ab}
 
-        .nav-menu li a.active,
-        .nav-menu li a:hover {
-            color: var(--primary-color);
-        }
-
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* تنسيق القائمة المتجاوبة */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 280px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                padding: 80px 20px 20px;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-                z-index: 9999;
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                right: 0;
-            }
-
-            .nav-menu li {
-                width: 100%;
-                border-bottom: 1px solid #f0f0f0;
-            }
-
-            .nav-menu li a {
-                padding: 15px 10px;
-                width: 100%;
-                border-radius: 0;
-                justify-content: flex-start;
-            }
-
-            .mobile-toggle {
-                display: block;
-                z-index: 10000;
-            }
-        }
-
-        /* الفوتر */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 40px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .footer-section p,
-        .footer-section li {
-            margin-bottom: 10px;
-            color: #ccc;
-        }
-
-        .footer-section a {
-            color: #ccc;
-            transition: var(--transition);
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            text-align: center;
-            color: #999;
-        }
-
-        /* شريط الكلمات المفتاحية */
-        .keywords-bar {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-bottom: 1px solid #dee2e6;
-            padding: 12px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .keywords-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .keywords-label {
-            color: var(--dark-color);
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
-
-        .keywords-label i {
-            color: var(--primary-color);
-        }
-
-        .keywords-list {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            flex: 1;
-        }
-
-        .keyword-tag {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--text-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .keyword-tag i {
-            color: var(--primary-color);
-            font-size: 0.8rem;
-        }
-
-        .keyword-tag:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 136, 255, 0.3);
-        }
-
-        .keyword-tag:hover i {
-            color: white;
-        }
-
-        /* أيقونات الاتصال البارزة */
-        .floating-contact {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
-            animation: pulse 2s infinite;
-        }
-
-        .contact-btn.phone {
-            background: var(--success-color);
-        }
-
-        .contact-btn.whatsapp {
-            background: #25d366;
-        }
-
-        .contact-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* وسائط متجاوبة */
-        @media (max-width: 992px) {
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -300px;
-                width: 300px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                padding: 80px 20px 20px;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                transition: var(--transition);
-                z-index: 999;
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .mobile-toggle {
-                display: block;
-                z-index: 1000;
-            }
-            
-            .mobile-close {
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .top-bar .container {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section {
-                padding: 40px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .hero {
-                padding: 80px 0;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    /* Floating contact */
+    .float{position:fixed;bottom:18px;right:18px;display:flex;flex-direction:column;gap:10px;z-index:70}
+    .float a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 10px 20px rgba(0,0,0,.25)}
+    .float .call{background:#2ecc71}
+    .float .wa{background:#25d366}
+  </style>
 </head>
 <body>
-    <!-- تضمين الهيدر -->
-    <div id="header-placeholder"></div>
 
+  <!-- شريط علوي -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="contact-mini">
+        <a href="tel:+966553011504"><i class="fa-solid fa-phone"></i> 0553011504</a> |
+        <a href="mailto:info@sadaacoo.com"><i class="fa-solid fa-envelope"></i> info@sadaacoo.com</a>
+      </div>
+      <div class="social-mini">
+        <a href="https://www.facebook.com/Glass.cleanin/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/sadaacco" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/ios_cd/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/966553011504" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
 
-    <!-- الهيرو سيكشن -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>مؤسسة صدى الالوان للمقاولات</h1>
-                <p>نقدم لكم أفضل خدمات تنظيف الواجهات الزجاجية والمباني بأحدث التقنيات وأعلى معايير الجودة</p>
-                <div class="hero-buttons">
-                    <a href="اتصل بنا.html" class="btn">اطلب خدمتك الآن</a>
-                    <a href="خدماتنا.html" class="btn btn-outline">استكشف خدماتنا</a>
-                </div>
-            </div>
+  <!-- الهيدر -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="./index.html" aria-label="الصفحة الرئيسية">
+        <img src="https://www.sadaacoo.com/wp-content/uploads/2024/08/‎⁨الشعار⁩.png" alt="صدى الألوان">
+        <strong>صدى الألوان</strong>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="./index.html">الرئيسية</a>
+        <a href="./من-نحن.html">من نحن</a>
+        <a href="./خدماتنا.html">خدماتنا</a>
+        <a href="./خدمات-الواجهات.html">خدمات الواجهات</a>
+        <a href="./الخدمات-المنزلية.html">الخدمات المنزلية</a>
+        <a href="./المدونة.html">المدونة</a>
+        <a href="./الصيانة.html">الصيانة</a>
+        <a href="./اتصل-بنا.html" class="btn" style="margin-top:6px">اتصل بنا</a>
+      </nav>
+
+      <button class="toggle" id="toggle" aria-label="فتح/إغلاق القائمة" aria-controls="menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- هيرو -->
+  <section class="hero">
+    <div class="container inner">
+      <h1>مؤسسة صدى الألوان للمقاولات</h1>
+      <p>نقدم حلول تنظيف الواجهات الزجاجية وصيانة المباني بأحدث التقنيات وبفريق محترف لضمان نتائج استثنائية.</p>
+      <div class="actions">
+        <a class="btn" href="./اتصل-بنا.html">اطلب خدمتك الآن</a>
+        <a class="btn outline" href="./خدماتنا.html">استكشف خدماتنا</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- خدمات -->
+  <section>
+    <div class="container">
+      <div class="title">
+        <h2>خدماتنا المتخصصة</h2>
+        <p class="muted">مجموعة متكاملة من حلول التنظيف والصيانة</p>
+        <div class="bar"></div>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="thumb">
+            <img loading="lazy" src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-واجهات-زجاج-بالرياض-6-780x470.jpeg" alt="تنظيف الواجهات الزجاجية">
+          </div>
+          <div class="body">
+            <h3>تنظيف الواجهات الزجاجية</h3>
+            <p class="muted">تنظيف و تلميع احترافي لواجهات المباني باستخدام معدات آمنة وتقنيات معتمدة.</p>
+            <a class="btn outline" href="./خدمات-الواجهات.html">المزيد</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img loading="lazy" src="https://www.sadaacoo.com/wp-content/uploads/2024/08/تنزيل-1-1.jpg" alt="جلي البلاط والرخام">
+          </div>
+          <div class="body">
+            <h3>جلي بلاط ورخام</h3>
+            <p class="muted">استعادة اللمعان الأصلي للأرضيات والرخام بتقنيات تجليخ وتلميع حديثة.</p>
+            <a class="btn outline" href="./الخدمات-المنزلية.html">المزيد</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img loading="lazy" src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-مسابح-الرياض.jpeg" alt="تنظيف وصيانة المسابح">
+          </div>
+          <div class="body">
+            <h3>تنظيف وصيانة المسابح</h3>
+            <p class="muted">تنظيف وتعقيم شامل مع صيانة دورية للحفاظ على جودة المياه وسلامتها.</p>
+            <a class="btn outline" href="./الخدمات-المنزلية.html">المزيد</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- لماذا نحن -->
+  <section class="muted-bg">
+    <div class="container">
+      <div class="title">
+        <h2>لماذا تختارنا؟</h2>
+        <p class="muted">مزايا تنافسية نضمن بها رضاك</p>
+        <div class="bar"></div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="feature">
+          <i class="fa-solid fa-award"></i>
+          <h3>جودة عالية</h3>
+          <p class="muted">التزام صارم بالمعايير العالمية في كل مشروع.</p>
         </div>
-    </section>
-
-    <!-- قسم الخدمات -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>خدماتنا المتخصصة</h2>
-                <p>نقدم مجموعة متكاملة من خدمات التنظيف والصيانة</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-واجهات-زجاج-بالرياض-6-780x470.jpeg" alt="تنظيف واجهات زجاجية">
-                    </div>
-                    <div class="service-content">
-                        <h3>تنظيف الواجهات الزجاجية</h3>
-                        <p>خدمة متخصصة في تنظيف الواجهات الزجاجية للمباني والمنشآت باستخدام أحدث التقنيات</p>
-                        <a href="خدمات الواجهات.html" class="btn btn-outline">المزيد</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://www.sadaacoo.com/wp-content/uploads/2024/08/تنزيل-1-1.jpg" alt="جلي بلاط ورخام">
-                    </div>
-                    <div class="service-content">
-                        <h3>جلي بلاط أرضيات ورخام</h3>
-                        <p>تلميع وتجليخ البلاط والرخام باستخدام معدات متطورة لاستعادة اللمعان الأصلي</p>
-                        <a href="الخدمات المنزلية.html" class="btn btn-outline">المزيد</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-مسابح-الرياض.jpeg" alt="تنظيف مسابح">
-                    </div>
-                    <div class="service-content">
-                        <h3>تنظيف وصيانة المسابح</h3>
-                        <p>خدمة متكاملة لتنظيف وتعقيم المسابح مع صيانة دورية للحفاظ على جودة المياه</p>
-                        <a href="الخدمات المنزلية.html" class="btn btn-outline">المزيد</a>
-                    </div>
-                </div>
-            </div>
+        <div class="feature">
+          <i class="fa-solid fa-users"></i>
+          <h3>فريق محترف</h3>
+          <p class="muted">كوادر مدربة وخبرة تنفيذية طويلة.</p>
         </div>
-    </section>
-
-    <!-- قسم لماذا نحن -->
-    <section class="section why-us">
-        <div class="container">
-            <div class="section-title">
-                <h2>لماذا تختار مؤسسة صدى الألوان؟</h2>
-                <p>أسباب تدفعك لثقتك بنا</p>
-            </div>
-            
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-award"></i>
-                    <h3>جودة عالية</h3>
-                    <p>نلتزم بأعلى معايير الجودة في جميع خدماتنا لضمان رضاكم التام</p>
-                </div>
-                
-                <div class="feature">
-                    <i class="fas fa-users"></i>
-                    <h3>فريق محترف</h3>
-                    <p>فريق عمل مدرب على أعلى مستوى لتنفيذ المهام بكفاءة واحترافية</p>
-                </div>
-                
-                <div class="feature">
-                    <i class="fas fa-tools"></i>
-                    <h3>أحدث التقنيات</h3>
-                    <p>نستخدم أحدث المعدات والتقنيات في مجال التنظيف والصيانة</p>
-                </div>
-                
-                <div class="feature">
-                    <i class="fas fa-headset"></i>
-                    <h3>دعم فني</h3>
-                    <p>خدمة عملاء متاحة على مدار الساعة للرد على استفساراتكم</p>
-                </div>
-            </div>
+        <div class="feature">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h3>تقنيات حديثة</h3>
+          <p class="muted">معدات آمنة ومواد معتمدة صديقة للبيئة.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- قسم أعمالنا -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>أعمالنا السابقة</h2>
-                <p>بعض المشاريع التي نفذناها بنجاح</p>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-item">
-                    <img src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-واجهات-زجاج-بالرياض-4-780x470.jpeg" alt="مشروع تنظيف واجهات">
-                    <div class="project-overlay">
-                        <h3>تنظيف واجهات زجاجية</h3>
-                        <a href="خدمات الواجهات.html" class="btn btn-outline">عرض المشروع</a>
-                    </div>
-                </div>
-                
-                <div class="project-item">
-                    <img src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-واجهات-زجاج-بالرياض-10-780x470.jpeg" alt="مشروع تنظيف واجهات حائل">
-                    <div class="project-overlay">
-                        <h3>تنظيف واجهات بحائل</h3>
-                        <a href="خدمات الواجهات.html" class="btn btn-outline">عرض المشروع</a>
-                    </div>
-                </div>
-                
-                <div class="project-item">
-                    <img src="https://www.sadaacoo.com/wp-content/uploads/2024/08/IMG_5509-780x450.webp" alt="مشروع تنظيف عام">
-                    <div class="project-overlay">
-                        <h3>تنظيف شامل</h3>
-                        <a href="الخدمات المنزلية.html" class="btn btn-outline">عرض المشروع</a>
-                    </div>
-                </div>
-            </div>
+  <!-- أعمالنا -->
+  <section>
+    <div class="container">
+      <div class="title">
+        <h2>نماذج من أعمالنا</h2>
+        <p class="muted">لقطات من مشاريع قمنا بتنفيذها</p>
+        <div class="bar"></div>
+      </div>
+
+      <div class="grid grid-3">
+        <figure class="project">
+          <img loading="lazy" src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-واجهات-زجاج-بالرياض-4-780x470.jpeg" alt="مشروع تنظيف واجهات">
+          <figcaption class="overlay">
+            <strong>تنظيف واجهات زجاجية</strong>
+            <a class="btn outline" href="./خدمات-الواجهات.html">عرض التفاصيل</a>
+          </figcaption>
+        </figure>
+
+        <figure class="project">
+          <img loading="lazy" src="https://www.sadaacoo.com/wp-content/uploads/2024/08/شركة-تنظيف-واجهات-زجاج-بالرياض-10-780x470.jpeg" alt="مشروع تنظيف واجهات بحائل">
+          <figcaption class="overlay">
+            <strong>تنظيف واجهات بحائل</strong>
+            <a class="btn outline" href="./خدمات-الواجهات.html">عرض التفاصيل</a>
+          </figcaption>
+        </figure>
+
+        <figure class="project">
+          <img loading="lazy" src="https://www.sadaacoo.com/wp-content/uploads/2024/08/IMG_5509-780x450.webp" alt="مشروع تنظيف شامل">
+          <figcaption class="overlay">
+            <strong>تنظيف شامل</strong>
+            <a class="btn outline" href="./الخدمات-المنزلية.html">عرض التفاصيل</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- اتصل بنا -->
+  <section class="muted-bg" id="contact">
+    <div class="container">
+      <div class="title">
+        <h2>اتصل بنا</h2>
+        <p class="muted">نخدمك في جميع مدن المملكة</p>
+        <div class="bar"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="info">
+          <div class="row"><i class="fa-solid fa-location-dot"></i><div><h4>العنوان</h4><div>الرياض — المملكة العربية السعودية</div></div></div>
+          <div class="row"><i class="fa-solid fa-phone"></i><div><h4>الهاتف</h4><div><a href="tel:+966553011504">0553011504</a> — <a href="tel:+966532876509">0532876509</a></div></div></div>
+          <div class="row"><i class="fa-solid fa-envelope"></i><div><h4>البريد</h4><div><a href="mailto:info@sadaacoo.com">info@sadaacoo.com</a></div></div></div>
+          <div class="row"><i class="fa-solid fa-clock"></i><div><h4>أوقات العمل</h4><div>السبت–الخميس: 8ص–10م</div></div></div>
         </div>
-    </section>
 
-    <!-- قسم اتصل بنا -->
-    <section class="section contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>اتصل بنا</h2>
-                <p>نحن جاهزون لخدمتك في أي وقت</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>عنواننا</h3>
-                            <p>المملكة العربية السعودية</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>اتصل بنا</h3>
-                            <p>0553011504</p>
-                            <p>0532876509</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>البريد الإلكتروني</h3>
-                            <p>info@sadaacoo.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>أوقات العمل</h3>
-                            <p>السبت - الخميس: 8 صباحاً - 10 مساءً</p>
-                            <p>الجمعة: مغلق</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>أرسل لنا رسالة</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">الاسم الكامل</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">رقم الهاتف</label>
-                            <input type="tel" id="phone" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
-                            <input type="email" id="email" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">الرسالة</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">إرسال الرسالة</button>
-                    </form>
-                </div>
-            </div>
+        <form class="form" onsubmit="event.preventDefault(); alert('شكرًا لتواصلك ❤️');">
+          <div class="group">
+            <label for="name">الاسم الكامل</label>
+            <input id="name" required>
+          </div>
+          <div class="group">
+            <label for="phone">رقم الهاتف</label>
+            <input id="phone" type="tel" required>
+          </div>
+          <div class="group">
+            <label for="email">البريد الإلكتروني</label>
+            <input id="email" type="email" placeholder="اختياري">
+          </div>
+          <div class="group">
+            <label for="message">الرسالة</label>
+            <textarea id="message" required></textarea>
+          </div>
+          <button class="btn" type="submit">إرسال الرسالة</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <h3>مؤسسة صدى الألوان</h3>
+        <p>نوفّر حلول تنظيف وصيانة متقدمة لواجهات الزجاج والمباني مع ضمان الجودة والالتزام بالمواعيد.</p>
+        <div class="social" style="margin-top:10px">
+          <a href="https://www.facebook.com/Glass.cleanin/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/sadaacco" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/ios_cd/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/966553011504" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-    </section>
+      </div>
 
+      <div>
+        <h3>خدماتنا</h3>
+        <ul class="muted" style="padding:0;list-style:none">
+          <li><a href="./خدمات-الواجهات.html">تنظيف الواجهات الزجاجية</a></li>
+          <li><a href="./الخدمات-المنزلية.html">الخدمات المنزلية</a></li>
+          <li><a href="./الصيانة.html">خدمات الصيانة</a></li>
+          <li><a href="./خدماتنا.html">تنظيف المسابح</a></li>
+        </ul>
+      </div>
 
+      <div>
+        <h3>روابط</h3>
+        <ul style="padding:0;list-style:none">
+          <li><a href="./index.html">الرئيسية</a></li>
+          <li><a href="./من-نحن.html">من نحن</a></li>
+          <li><a href="./المدونة.html">المدونة</a></li>
+          <li><a href="./اتصل-بنا.html">اتصل بنا</a></li>
+        </ul>
+      </div>
 
-    <!-- تضمين الفوتر -->
-    <div id="footer-placeholder"></div>
+      <div>
+        <h3>تواصل مباشر</h3>
+        <p class="muted"><i class="fa-solid fa-phone"></i> <a href="tel:+966553011504">0553011504</a></p>
+        <p class="muted"><i class="fa-solid fa-envelope"></i> <a href="mailto:info@sadaacoo.com">info@sadaacoo.com</a></p>
+        <p class="muted"><i class="fa-solid fa-location-dot"></i> الرياض، السعودية</p>
+      </div>
+    </div>
+    <div class="copy">&copy; 2024 مؤسسة صدى الألوان للمقاولات — جميع الحقوق محفوظة.</div>
+  </footer>
 
-    <!-- تحميل ملفات CSS و JavaScript الموحدة -->
-    <link rel="stylesheet" href="header-footer-styles.css">
-    <script src="load-components.js"></script>
-    <script src="header-footer-scripts.js"></script>
+  <!-- أزرار عائمة -->
+  <div class="float" aria-label="تواصل سريع">
+    <a class="call" href="tel:+966553011504" aria-label="اتصال"><i class="fa-solid fa-phone"></i></a>
+    <a class="wa" href="https://wa.me/966553011504" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <!-- JS خفيف للقائمة وتحديد الرابط النشط -->
+  <script>
+    const toggle = document.getElementById('toggle');
+    const menu = document.getElementById('menu');
+
+    toggle?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.innerHTML = '<i class="fa-solid ' + (open ? 'fa-xmark' : 'fa-bars') + '"></i>';
+    });
+
+    // إغلاق القائمة عند الضغط خارجها (موبايل)
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    });
+
+    // تمييز الرابط النشط
+    const current = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
+    document.querySelectorAll('.menu a').forEach(a=>{
+      const href = a.getAttribute('href');
+      if (href === current || (current==='' && href==='index.html')) a.classList.add('active');
+    });
+  </script>
 </body>
-
 </html>
