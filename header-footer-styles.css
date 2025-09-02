@@ -1,0 +1,629 @@
+/* تنسيقات الهيدر والفوتر الموحدة */
+
+/* الشريط العلوي */
+/* الشريط العلوي */
+        .top-bar {
+            background: var(--dark-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-contact {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .top-contact a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .top-contact a:hover {
+            color: var(--primary-color);
+        }
+        
+        .top-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .top-social a {
+            font-size: 1.1rem;
+        }
+        
+        .top-social a:hover {
+            color: var(--primary-color);
+        }
+        
+
+/* الهيدر الرئيسي */
+header {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 55px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    font-weight: 500;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-menu li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #00d4ff);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-menu li a:hover::before,
+.nav-menu li a.active::before {
+    width: 80%;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: var(--primary-color);
+    background: rgba(0, 136, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-toggle:hover span {
+    background: var(--primary-color);
+}
+
+.mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* شريط الكلمات المفتاحية */
+.keywords-bar {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 1px solid #dee2e6;
+    padding: 20px 0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    margin-top: 40px;
+}
+
+.keywords-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.keywords-label {
+    color: var(--dark-color);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 2px solid var(--primary-color);
+}
+
+.keywords-label i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.keywords-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.keyword-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.keyword-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.keyword-tag:hover::before {
+    left: 100%;
+}
+
+.keyword-tag i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.keyword-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 136, 255, 0.3);
+}
+
+.keyword-tag:hover i {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* كلمات مفتاحية خاصة بالخدمات */
+.keyword-tag.service {
+    border-color: var(--success-color);
+}
+
+.keyword-tag.service:hover {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+}
+
+.keyword-tag.location {
+    border-color: var(--warning-color);
+}
+
+.keyword-tag.location:hover {
+    background: var(--warning-color);
+    border-color: var(--warning-color);
+    box-shadow: 0 8px 25px rgba(230, 126, 34, 0.3);
+}
+
+/* الفوتر */
+footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    pointer-events: none;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 50px 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-section h3 {
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #00d4ff);
+    border-radius: 2px;
+}
+
+.footer-section p,
+.footer-section li {
+    margin-bottom: 12px;
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.footer-section a i {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+    text-align: center;
+    color: #95a5a6;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom p {
+    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-bottom a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* أيقونات الاتصال البارزة */
+.floating-contact {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2));
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover::before {
+    opacity: 1;
+}
+
+.contact-btn.phone {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.contact-btn.whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.contact-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* الاستجابة للموبايل */
+@media (max-width: 992px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease;
+        z-index: 9999;
+        gap: 0;
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-menu li a {
+        padding: 18px 15px;
+        width: 100%;
+        border-radius: 0;
+        justify-content: flex-start;
+        font-size: 1.1rem;
+    }
+
+    .nav-menu li a::before {
+        display: none;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+        background: rgba(0, 136, 255, 0.1);
+        transform: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+        z-index: 10000;
+    }
+
+    .header-container {
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .top-contact {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .top-social {
+        justify-content: center;
+    }
+
+    .keywords-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .keywords-list {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .keyword-tag {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 15px 25px;
+    }
+
+    .floating-contact {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .contact-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 8px 0;
+        font-size: 0.8rem;
+    }
+
+    .top-contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .top-social a {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        right: -100%;
+    }
+
+    .keywords-bar {
+        padding: 12px 0;
+    }
+
+    .keywords-label {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .keyword-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .footer-content {
+        padding: 30px 15px 20px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .floating-contact {
+        bottom: 15px;
+        right: 15px;
+        gap: 12px;
+    }
+
+    .contact-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
